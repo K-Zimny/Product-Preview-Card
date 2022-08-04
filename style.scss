@@ -85,6 +85,7 @@ select {
 
 .product-preview-card {
   --primary-dark: hsl(158, 36%, 37%);
+  --primary-very-dark: hsl(158, 19%, 31%);
   --primary-light: hsl(30, 38%, 92%);
 
   --neutral-very-dark: hsl(212, 21%, 14%);
@@ -98,6 +99,8 @@ select {
   --ff-body: "Montserrat", sans-serif;
 
   --border-radius: 10px;
+
+  // media query
 }
 
 // ------------------------------------------------
@@ -112,9 +115,11 @@ body {
 }
 
 .container {
-  width: 900px;
-  max-width: 95%;
+  max-width: 900px;
+  width: 95%;
   margin-inline: auto;
+
+  padding: 3rem 0;
 }
 
 .flex-container {
@@ -122,6 +127,14 @@ body {
 
   & > div {
     width: 50%;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+
+    & > div {
+      width: 100%;
+    }
   }
 }
 
@@ -135,6 +148,10 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+
+  @media (max-width: 1000px) {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
 }
 
 .product-preview-card .product-content-container {
@@ -143,6 +160,10 @@ body {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 
   height: 100%;
+
+  @media (max-width: 1000px) {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
 }
 
 .product-preview-card .product-content-container-inner {
@@ -165,9 +186,13 @@ body {
   color: var(--neutral-very-dark);
   line-height: 3rem;
 
-  width: 10ch;
+  width: 90%;
 
   margin-bottom: 1.5rem;
+
+  @media (max-width: 1000px) {
+    width: auto;
+  }
 }
 
 .product-preview-card .product-description {
@@ -177,17 +202,26 @@ body {
   line-height: 1.75rem;
   letter-spacing: 0.075rem;
 
-  width: 32ch;
+  width: 90%;
 
   margin-bottom: 1.5rem;
+
+  @media (max-width: 1000px) {
+    width: auto;
+  }
 }
 
 .product-preview-card .product-price-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.25rem;
   align-items: center;
 
   margin-bottom: 1.5rem;
+
+  @media (max-width: 1000px) {
+    gap: 0.5;
+  }
 }
 
 .product-preview-card .product-price {
@@ -216,6 +250,11 @@ body {
   border-radius: 10px;
 
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-very-dark);
+  }
 }
 
 .product-preview-card .product-cart-btn-text {

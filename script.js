@@ -3,9 +3,9 @@ const textContainer = document.querySelector(
 );
 const imageContainer = document.querySelector(".product-image-container");
 
-let textContainerHeight = textContainer.offsetHeight;
+function resizeImage() {
+  let textContainerHeight = textContainer.offsetHeight;
+  imageContainer.style.height = textContainerHeight + "px";
+}
 
-textContainerHeight = textContainerHeight - 48;
-console.log(textContainerHeight);
-
-imageContainer.style.height = textContainerHeight + "px";
+resizeImage();
