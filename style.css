@@ -221,6 +221,8 @@ body {
 
 .product-preview-card .product-cart-btn-text {
   color: var(--neutral-white);
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
   text-decoration: none;
 }
 
