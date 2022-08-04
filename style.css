@@ -162,14 +162,24 @@ body {
   text-decoration: line-through;
 }
 
-.product-preview-card .product-cart-btn-container {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
+.product-preview-card .product-cart-btn-text {
+  display: block;
+  position: relative;
   background-color: var(--primary-dark);
+  color: var(--neutral-white);
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  text-decoration: none;
+  text-align: center;
   padding: 1rem 3rem;
   border-radius: 10px;
+}
+
+.product-preview-card .product-cart-btn-text::after {
+  position: absolute;
+  content: url(images/icon-cart.svg);
+  left: 31%;
+  top: 33%;
 }
 
 /*# sourceMappingURL=style.css.map */
